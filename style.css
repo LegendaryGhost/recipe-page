@@ -47,6 +47,9 @@ a {
     --large-spacing: 32px;
     --medium-spacing: 20px;
     --small-spacing: 10px;
+
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.6rem;
 }
 
 body {
@@ -74,14 +77,14 @@ body {
     margin-bottom: var(--large-spacing);
 }
 
-h1, h2, h3 {
+h1, h2 {
     margin-bottom: var(--medium-spacing);
 }
 
 .recipe-name {
     font-family: 'Young serif', serif;
     color: var(--stone-900);
-    font-size: 2rem;
+    font-size: var(--h1-font-size);
     line-height: 1.2;
     margin-bottom: var(--large-spacing);
 }
@@ -92,9 +95,9 @@ h1, h2, h3 {
     border-radius: 10px;
 }
 
-.recipe-preparation-time h3 {
+.recipe-preparation-time h2 {
     color: var(--rose-800);
-    font-size: 1.2rem;
+    font-size: calc(var(--h2-font-size) - .4rem);
 }
 
 ol {
@@ -145,7 +148,7 @@ li::marker {
 .section-title {
     font-family: 'Young serif', serif;
     color: var(--brown-800);
-    font-size: 1.6rem;
+    font-size: var(--h2-font-size);
 }
 
 .recipe-details hr {
@@ -183,6 +186,11 @@ li::marker {
 }
 
 @media screen and (min-width: 400px) {
+    :root {
+        --h1-font-size: 3rem;
+        --h2-font-size: 2rem;
+    }
+
     body {
         display: -ms-grid;
         display: grid;
@@ -192,7 +200,7 @@ li::marker {
     .card {
         width: min(100%, 700px);
         border-radius: 20px;
-        margin-block: calc(2 * var(--large-spacing));
+        margin-block: calc(4 * var(--large-spacing));
     }
 
     .recipe-img {
