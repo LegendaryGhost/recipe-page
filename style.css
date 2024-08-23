@@ -205,6 +205,7 @@ li::marker {
 
     .recipe-img {
         margin: var(--large-spacing);
+        margin-bottom: 0;
         width: calc(100% - var(--large-spacing) * 2);
         border-radius: 10px;
     }
