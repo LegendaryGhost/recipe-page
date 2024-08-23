@@ -1,5 +1,13 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Reset */
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -106,7 +114,11 @@ ol li::marker {
 }
 
 ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: var(--medium-spacing);
     padding-left: var(--small-spacing);
@@ -168,4 +180,28 @@ li::marker {
 .attribution a {
     color: var(--brown-800);
     font-weight: bold;
+}
+
+@media screen and (min-width: 400px) {
+    body {
+        display: -ms-grid;
+        display: grid;
+        place-items: center;
+    }
+
+    .card {
+        width: min(100%, 700px);
+        border-radius: 20px;
+        margin-block: calc(2 * var(--large-spacing));
+    }
+
+    .recipe-img {
+        margin: var(--large-spacing);
+        width: calc(100% - var(--large-spacing) * 2);
+        border-radius: 10px;
+    }
+
+    .attribution {
+        background-color: inherit;
+    }
 }
